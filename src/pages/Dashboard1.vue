@@ -13,15 +13,15 @@
         >
           <template slot="content">
             <h4 class="title">伙伴数量</h4>
-            <p class="category">
+            <!--<p class="category">
               多少个伙伴
-            </p>
+            </p>-->
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>access_time</md-icon>
-              updated 10 days ago
+              12个月之内
             </div>
           </template>
         </chart-card>
@@ -95,13 +95,14 @@
           </template>
 
           <template slot="footer">
-            <div class="stats">
+            <!--<div class="stats">
               <md-icon>date_range</md-icon>
               This month
-            </div>
+            </div>-->
           </template>
         </stats-card>
       </div>
+      <!--
       <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
@@ -126,6 +127,7 @@
           </template>
         </stats-card>
       </div>
+      -->
       <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
@@ -135,14 +137,15 @@
           </template>
 
           <template slot="content">
-            <p class="category">Fixed Issues</p>
-            <h3 class="title">75</h3>
+            <p class="category">有风险伙伴</p>
+            <h3 class="title">{{ partnersinfo.number_risk }}
+              <small>个</small></h3>
           </template>
 
           <template slot="footer">
             <div class="stats">
-              <md-icon>local_offer</md-icon>
-              Tracked from Github
+              <md-icon class="text-danger">warning</md-icon>
+              <a href="#pablo">需要处理</a>
             </div>
           </template>
         </stats-card>
@@ -152,29 +155,31 @@
       >
         <stats-card data-background-color="blue">
           <template slot="header">
-            <i class="fab fa-twitter"></i>
+            <i class="fas fa-thumbs-up"></i>
           </template>
 
           <template slot="content">
-            <p class="category">Folowers</p>
-            <h3 class="title">+245</h3>
+            <p class="category">推荐伙伴</p>
+            <h3 class="title">{{ partnersinfo.number_recommended }}
+              <small>个</small></h3>
           </template>
 
           <template slot="footer">
-            <div class="stats">
+            <!--<div class="stats">
               <md-icon>update</md-icon>
               Just Updated
-            </div>
+            </div>-->
           </template>
         </stats-card>
       </div>
+
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
-          <md-card-header data-background-color="orange">
-            <h4 class="title">Employees Stats</h4>
-            <p class="category">New employees on 15th September, 2016</p>
+          <md-card-header data-background-color="green">
+            <h4 class="title">伙伴状况</h4>
+            <p class="category">你现在有{{partnersinfo.number}}个伙伴</p>
           </md-card-header>
           <md-card-content>
             <simple-table1 table-header-color="green"></simple-table1>
@@ -187,14 +192,29 @@
       >
         <md-card>
           <md-card-header data-background-color="orange">
-            <h4 class="title">Employees Stats</h4>
-            <p class="category">New employees on 15th September, 2016</p>
+            <h4 class="title">需要注意的伙伴</h4>
+            <p class="category">有{{partnersinfo.number_risk}}个伙伴需要注意</p>
           </md-card-header>
           <md-card-content>
             <warning-table table-header-color="orange"></warning-table>
           </md-card-content>
         </md-card>
       </div>
+
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <md-card>
+          <md-card-header data-background-color="blue">
+            <h4 class="title">伙伴推荐</h4>
+            <p class="category">有{{partnersinfo.number_recommended}}个伙伴推荐</p>
+          </md-card-header>
+          <md-card-content>
+            <recommendation-table table-header-color="blue"></recommendation-table>
+          </md-card-content>
+        </md-card>
+      </div>
+      <!--
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
@@ -217,6 +237,7 @@
           </template>
         </nav-tabs-card>
       </div>
+      -->
     </div>
   </div>
 </template>
@@ -229,7 +250,11 @@ import {
   NavTabsTable,
   OrderedTable,
   SimpleTable1,
-  WarningTable
+  WarningTable,
+  RecommendationTable,
+  partnerdata,
+  partnerrecommnedationdata,
+  partnerwarningdata
 } from "@/components";
 
 export default {
@@ -240,13 +265,18 @@ export default {
     NavTabsTable,
     OrderedTable,
     SimpleTable1,
-    WarningTable
+    WarningTable,
+    RecommendationTable,
+  partnerdata,
+  partnerrecommnedationdata,
+  partnerwarningdata
   },
   data() {
     return {
       partnersinfo: {
-        number: 29,
-        number_risk: 2
+        number: partnerdata.length,
+        number_risk: partnerwarningdata.length,
+        number_recommended: partnerrecommnedationdata.length
       },
       dailyPartnerChart: {
         data: {
@@ -303,14 +333,14 @@ export default {
             "Jun\n19",
             "Jul\n19"
           ],
-          series: [[10, 10, 12, 13, 15, 17, 20, 23, 22, 24, 27, 29]]
+          series: [[3, 3, 4, 3, 4, 3, 4, 5, 5, 5, 5, 5]]
         },
         options: {
           axisX: {
             showGrid: false
           },
           low: 0,
-          high: 40,
+          high: 10,
           chartPadding: {
             top: 0,
             right: 5,

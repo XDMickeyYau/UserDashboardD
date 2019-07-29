@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import partnerwarningdata from "./partnerwarningdata.js";
+import partnerwarningdata from "../Data/partnerwarningdata.js";
 console.log(partnerwarningdata);
 var example = [
   {

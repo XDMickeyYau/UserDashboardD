@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import partnerdata from "./partnerdata.js";
+import partnerdata from "../Data/partnerdata.js";
 var example = [
   {
     name: "公司1",

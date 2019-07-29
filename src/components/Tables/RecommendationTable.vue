@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import partnerrecommnedationdata from "../Data/partnerrecommendationdata.js";
 var example = [
   {
     name: "公司A",
@@ -44,7 +45,7 @@ export default {
   data() {
     return {
       selected: [],
-      users: example
+      users: partnerrecommnedationdata
     };
   }
 };

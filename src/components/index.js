@@ -11,6 +11,11 @@ import SimpleTable1 from "./Tables/SimpleTable1.vue";
 import WarningTable from "./Tables/WarningTable.vue";
 import RecommendationTable from "./Tables/RecommendationTable.vue";
 
+//Data
+import partnerdata from "./Data/partnerdata.js";
+import partnerrecommnedationdata from "./Data/partnerrecommendationdata.js";
+import partnerwarningdata from "./Data/partnerwarningdata.js";
+
 export {
   ChartCard,
   NavTabsCard,
@@ -20,5 +25,8 @@ export {
   SimpleTable,
   SimpleTable1,
   WarningTable,
-  RecommendationTable
+  RecommendationTable,
+  partnerdata,
+  partnerrecommnedationdata,
+  partnerwarningdata
 };
