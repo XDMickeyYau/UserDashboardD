@@ -1,7 +1,6 @@
 <template>
   <div class="content">
     <div class="md-layout">
-
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
       >
@@ -27,7 +26,7 @@
           </template>
         </chart-card>
       </div>
-          <!--
+      <!--
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
       >
@@ -83,7 +82,7 @@
       </div>
       -->
       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25" 
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
         <stats-card data-background-color="green">
           <template slot="header">
@@ -92,7 +91,7 @@
 
           <template slot="content">
             <p class="category">伙伴数量</p>
-            <h3 class="title">{{partnersinfo.number}}</h3>
+            <h3 class="title">{{ partnersinfo.number }}</h3>
           </template>
 
           <template slot="footer">
@@ -113,8 +112,8 @@
 
           <template slot="content">
             <p class="category">有风险伙伴</p>
-            <h3 class="title">  
-              {{partnersinfo.number_risk}}/{{partnersinfo.number}}
+            <h3 class="title">
+              {{ partnersinfo.number_risk }}/{{ partnersinfo.number }}
               <small>个</small>
             </h3>
           </template>
@@ -182,7 +181,7 @@
           </md-card-content>
         </md-card>
       </div>
-      
+
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
@@ -195,7 +194,6 @@
             <warning-table table-header-color="orange"></warning-table>
           </md-card-content>
         </md-card>
-     
       </div>
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
@@ -246,9 +244,9 @@ export default {
   },
   data() {
     return {
-      partnersinfo:{
-        number:29,
-        number_risk:2
+      partnersinfo: {
+        number: 29,
+        number_risk: 2
       },
       dailyPartnerChart: {
         data: {
