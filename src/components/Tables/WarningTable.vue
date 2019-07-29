@@ -16,6 +16,7 @@
 
 <script>
 import partnerwarningdata from "./partnerwarningdata.js";
+console.log(partnerwarningdata);
 var example = [
   {
     name: "公司23",
@@ -45,7 +46,7 @@ export default {
   data() {
     return {
       selected: [],
-      users: example
+      users: partnerwarningdata
     };
   }
 };

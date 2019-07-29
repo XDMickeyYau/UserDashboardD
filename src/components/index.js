@@ -8,8 +8,8 @@ import NavTabsTable from "./Tables/NavTabsTable.vue";
 import OrderedTable from "./Tables/OrderedTable.vue";
 import SimpleTable from "./Tables/SimpleTable.vue";
 import SimpleTable1 from "./Tables/SimpleTable1.vue";
-import warningtable from "./Tables/WarningTable.vue";
-import recommendationtable from "./Tables/RecommendationTable.vue";
+import WarningTable from "./Tables/WarningTable.vue";
+import RecommendationTable from "./Tables/RecommendationTable.vue";
 
 export {
   ChartCard,
@@ -19,6 +19,6 @@ export {
   OrderedTable,
   SimpleTable,
   SimpleTable1,
-  warningtable,
-  recommendationtable
+  WarningTable,
+  RecommendationTable
 };
