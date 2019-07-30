@@ -2,7 +2,20 @@
   <div class="content">
     <div class="md-layout">
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <md-card>
+          <md-card-header data-background-color="orange">
+            <h4 class="title">需要注意</h4>
+            <p class="category">需要留意</p>
+          </md-card-header>
+          <md-card-content>
+            <warning-table table-header-color="orange"></warning-table>
+          </md-card-content>
+        </md-card>
+      </div>
+            <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
           <md-card-header data-background-color="green">
@@ -34,12 +47,13 @@
 </template>
 
 <script>
-import { SimpleTable1, OrderedTable } from "@/components";
+import { SimpleTable1, OrderedTable,WarningTable } from "@/components";
 
 export default {
   components: {
     OrderedTable,
-    SimpleTable1
+    SimpleTable1,
+    WarningTable
   }
 };
 </script>

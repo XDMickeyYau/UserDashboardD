@@ -150,6 +150,7 @@
           </template>
         </stats-card>
       </div>
+
       <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
@@ -161,6 +162,26 @@
           <template slot="content">
             <p class="category">推荐伙伴</p>
             <h3 class="title">{{ partnersinfo.number_recommended }}
+              <small>个</small></h3>
+          </template>
+
+          <template slot="footer">
+            <!--<div class="stats">
+              <md-icon>update</md-icon>
+              Just Updated
+            </div>-->
+          </template>
+        </stats-card>
+      </div>
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card data-background-color="green">
+          <template slot="header">
+            <i class="fas fa-star"></i>
+          </template>
+
+          <template slot="content">
+            <p class="category">伙伴邀请</p>
+            <h3 class="title">{{ partnersinfo.number_invited }}
               <small>个</small></h3>
           </template>
 
@@ -214,6 +235,19 @@
           </md-card-content>
         </md-card>
       </div>
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <md-card>
+          <md-card-header data-background-color="green">
+            <h4 class="title">伙伴邀请</h4>
+            <p class="category">有{{partnersinfo.number_invited}}个伙伴推荐</p>
+          </md-card-header>
+          <md-card-content>
+            <invite-table table-header-color="blue"></invite-table>
+          </md-card-content>
+        </md-card>
+      </div>
       <!--
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
@@ -252,9 +286,11 @@ import {
   SimpleTable1,
   WarningTable,
   RecommendationTable,
+  InviteTable,
   partnerdata,
   partnerrecommnedationdata,
-  partnerwarningdata
+  partnerwarningdata,
+  partnerinvitedata
 } from "@/components";
 
 export default {
@@ -267,6 +303,7 @@ export default {
     SimpleTable1,
     WarningTable,
     RecommendationTable,
+    InviteTable,
   partnerdata,
   partnerrecommnedationdata,
   partnerwarningdata
@@ -276,7 +313,8 @@ export default {
       partnersinfo: {
         number: partnerdata.length,
         number_risk: partnerwarningdata.length,
-        number_recommended: partnerrecommnedationdata.length
+        number_recommended: partnerrecommnedationdata.length,
+        number_invited: partnerinvitedata.length
       },
       dailyPartnerChart: {
         data: {

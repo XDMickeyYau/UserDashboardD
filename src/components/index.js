@@ -10,11 +10,13 @@ import SimpleTable from "./Tables/SimpleTable.vue";
 import SimpleTable1 from "./Tables/SimpleTable1.vue";
 import WarningTable from "./Tables/WarningTable.vue";
 import RecommendationTable from "./Tables/RecommendationTable.vue";
+import InviteTable from "./Tables/InviteTable.vue"
 
 //Data
 import partnerdata from "./Data/partnerdata.js";
 import partnerrecommnedationdata from "./Data/partnerrecommendationdata.js";
 import partnerwarningdata from "./Data/partnerwarningdata.js";
+import partnerinvitedata from "./Data/partnerinvitedata.js"
 
 export {
   ChartCard,
@@ -28,5 +30,7 @@ export {
   RecommendationTable,
   partnerdata,
   partnerrecommnedationdata,
-  partnerwarningdata
+  partnerwarningdata,
+  partnerinvitedata,
+  InviteTable
 };
