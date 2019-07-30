@@ -9,7 +9,7 @@
           :chart-options="numberPartnerChart.options"
           :chart-responsive-options="numberPartnerChart.responsiveOptions"
           :chart-type="'Bar'"
-          data-background-color="red"
+          data-background-color="green"
         >
           <template slot="content">
             <h4 class="title">伙伴数量</h4>
@@ -91,7 +91,7 @@
 
           <template slot="content">
             <p class="category">伙伴数量</p>
-            <h3 class="title">{{ partnersinfo.number }}</h3>
+            <h3 class="title">{{ partnersinfo.number }}<small>个</small></h3>
           </template>
 
           <template slot="footer">
@@ -131,7 +131,7 @@
       <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
-        <stats-card data-background-color="red">
+        <stats-card data-background-color="orange">
           <template slot="header">
             <md-icon>info_outline</md-icon>
           </template>
@@ -145,7 +145,7 @@
           <template slot="footer">
             <div class="stats">
               <md-icon class="text-danger">warning</md-icon>
-              <a href="#pablo">需要处理</a>
+              <router-link to="/table1">需要处理</router-link >
             </div>
           </template>
         </stats-card>
@@ -174,7 +174,7 @@
         </stats-card>
       </div>
       <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
-        <stats-card data-background-color="green">
+        <stats-card data-background-color="purple">
           <template slot="header">
             <i class="fas fa-star"></i>
           </template>
@@ -239,12 +239,12 @@
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
-          <md-card-header data-background-color="green">
+          <md-card-header data-background-color="purple">
             <h4 class="title">伙伴邀请</h4>
             <p class="category">有{{partnersinfo.number_invited}}个伙伴推荐</p>
           </md-card-header>
           <md-card-content>
-            <invite-table table-header-color="blue"></invite-table>
+            <invite-table table-header-color="purple"></invite-table>
           </md-card-content>
         </md-card>
       </div>

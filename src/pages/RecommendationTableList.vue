@@ -18,12 +18,12 @@
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
-          <md-card-header data-background-color="green">
+          <md-card-header data-background-color="purple">
             <h4 class="title">公司邀请</h4>
             <p class="category">它们想要跟你合作</p>
           </md-card-header>
           <md-card-content>
-            <invite-table table-header-color="green"></invite-table>
+            <invite-table table-header-color="purple"></invite-table>
           </md-card-content>
         </md-card>
       </div>

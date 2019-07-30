@@ -9,8 +9,8 @@
         <md-table-cell md-label="运营情况" v-bind:style="{ color:((item.operationsts=='有潜在风险')?'red':'green')}">{{
           item.operationsts
         }}</md-table-cell>
-        <md-table-cell md-label="了解更多">
-          <router-link v-bind:to="'/partner-profile/'+item.id"><md-icon>store</md-icon></router-link >
+        <md-table-cell md-label="更多">
+          <router-link v-bind:to="'/partner-profile/'+item.id+'/partnerdata'"><md-icon>store</md-icon></router-link >
         </md-table-cell>
       </md-table-row>
     </md-table>
