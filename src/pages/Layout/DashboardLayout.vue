@@ -36,6 +36,7 @@
         <md-icon>content_paste</md-icon>
         <p>伙伴推荐</p>
       </sidebar-link>
+      <!--
       <sidebar-link to="/typography">
         <md-icon>library_books</md-icon>
         <p>Typography</p>
@@ -44,9 +45,10 @@
         <md-icon>bubble_chart</md-icon>
         <p>Icons</p>
       </sidebar-link>
+      -->
       <sidebar-link to="/notifications">
         <md-icon>notifications</md-icon>
-        <p>Notifications</p>
+        <p>通知</p>
       </sidebar-link>
     </side-bar>
 

@@ -17,12 +17,12 @@ var notifications=[
 {
     id:4,
     class: "info",
-    content: "有新的推荐：公司E"
+    content: "有新的推荐：公司Y"
 },
 {
     id:5,
     class: "info",
-    content: "有新的推荐：公司D"
+    content: "有新的推荐：公司X"
 }
 ]
 export default notifications

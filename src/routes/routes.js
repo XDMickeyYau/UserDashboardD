@@ -69,7 +69,7 @@ const routes = [
       },
       {
         path: "notifications",
-        name: "Notifications",
+        name: "通知",
         component: Notifications
       },
       {
