@@ -1,39 +1,37 @@
 <template>
-  <div class="content">
+  <div class="content" >
     <div class="md-layout">
       <div class="md-layout-item">
-        <md-card>
+        <md-card>   
           <md-card-header data-background-color="green">
-            <h4 class="title">Notifications</h4>
-            <p class="category">
+            <h4 class="title">通知</h4>
+            <!--<p class="category">
               Handcrafted by us with <i class="fa fa-heart heart"></i>
-            </p>
+              </p>-->
           </md-card-header>
+
           <md-card-content>
             <div class="md-layout">
               <div class="md-layout-item md-medium-size-100">
-                <h5>Notifications Style</h5>
-                <div class="alert alert-info">
-                  <span>This is a plain notification</span>
-                </div>
-                <div class="alert alert-info">
-                  <button type="button" aria-hidden="true" class="close">
-                    ×
-                  </button>
-                  <span>This is a notification with close button.</span>
-                </div>
-                <div
-                  class="alert alert-info alert-with-icon"
+                <!--<h5>Notifications</h5>-->
+                <div v-for="notification in notificationdata" v-bind:key="notification.id">
+                  <div
+                  class="alert  alert-with-icon"
+                  v-bind:class="{ 'alert-info': notification.class=='info',
+                   'alert-warning': notification.class=='warning', 'alert-success': notification.class=='success'}"
                   data-notify="container"
-                >
+                  >
                   <button type="button" aria-hidden="true" class="close">
                     ×
                   </button>
-                  <i data-notify="icon" class="material-icons">add_alert</i>
+                  <i data-notify="icon" class="material-icons">{{(notification.class=='info')?'add_alert':(notification.class=='warning')?'warning':'thumb_up'}}</i>
                   <span data-notify="message"
-                    >This is a notification with close button and icon.</span
+                    >{{notification.content}}</span
                   >
+                  </div>
                 </div>
+
+                <!--
                 <div
                   class="alert alert-info alert-with-icon"
                   data-notify="container"
@@ -50,7 +48,9 @@
                     style.</span
                   >
                 </div>
+                -->
               </div>
+              <!--
               <div class="md-layout-item md-medium-size-100">
                 <h5>Notification states</h5>
                 <div class="alert alert-info">
@@ -61,6 +61,7 @@
                     ><b> Info - </b> This is a regular notification made with
                     ".alert-info"</span
                   >
+
                 </div>
                 <div class="alert alert-success">
                   <button type="button" aria-hidden="true" class="close">
@@ -99,7 +100,8 @@
                   >
                 </div>
               </div>
-
+              -->
+              <!--
               <div class="md-layout-item md-size-100">
                 <div class="places-buttons text-center">
                   <h5 class="text-center">
@@ -137,7 +139,9 @@
                     >Bottom Right</md-button
                   >
                 </div>
+                
               </div>
+              -->
             </div>
           </md-card-content>
         </md-card>
@@ -147,12 +151,19 @@
 </template>
 
 <script>
+import notificationlist from "../pages/Notification/notification.js";
 export default {
   data() {
     return {
       type: ["", "info", "success", "warning", "danger"],
       notifications: {
         topCenter: false
+      },
+      notificationdata: notificationlist,
+      notification:{
+        id:'',
+        class:'',
+        content:''
       }
     };
   },
@@ -170,4 +181,5 @@ export default {
     }
   }
 };
+console.log(notificationlist)
 </script>

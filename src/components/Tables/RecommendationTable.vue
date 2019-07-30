@@ -1,7 +1,7 @@
 <template>
   <div>
     <md-table v-model="users" :table-header-color="tableHeaderColor">
-      <md-table-row slot="md-table-row" slot-scope="{ item }">
+      <md-table-row slot="md-table-row" slot-scope="{ item }" >
         <md-table-cell md-label="名称">{{ item.name }}</md-table-cell>
         <md-table-cell md-label="地区">{{ item.reigion }}</md-table-cell>
         <md-table-cell md-label="类型">{{ item.type }}</md-table-cell>

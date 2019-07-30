@@ -31,17 +31,13 @@ export default {
     UserCard,
     PartnerProfileCard
   },
-  /*data(){
+  data(){
     return{
     user:{
-      name: partnerprofile.name,
-      reigion:partnerprofile.reigion,
-      type:partnerprofile.type,
-      creditsts:partnerprofile.creditsts,
-      operationsts:partnerprofile.operationsts
+      partnerprofile:partnerprofile
     }
     }
-  }*/
+  }
   //test
   /*beforeRouteUpdate(to, from, next) {
     console.log(`Updating slug from ${from} to ${to}`)

@@ -67,17 +67,11 @@
     </md-card>
 </template>
 <script>
-import partnerdata from "../../components/Data/partnerdata"
-    var id= 0;
-    var partnerprofile= partnerdata[id];
+
+import partnerdata from "../../components/Data/partnerdata";
 
 export default {
-  created() {
-    console.log(this.$route.params.id);
-    var id= Number(this.$route.params.id);
-    var partnerprofile= partnerdata[id];
-    console.log("1"+partnerprofile);
-  },
+
   name: "partner-profile-card",
   props: {
     dataBackgroundColor: {
@@ -92,33 +86,12 @@ export default {
         console.log(this.$el.textContent) // => 'updated'
       })
     }},*/
-   /*name: {
-      type: String,
-      default: ""
-    },
-   reigion: {
-      type: String,
-      default: ""
-    },
-   type: {
-      type: String,
-      default: ""
-    },
-   creditsts: {
-      type: String,
-      default: ""
-    },
-   operationsts: {
-      type: String,
-      default: ""
-   }*/
   },
 
   data() {
-    
-    console.log(partnerprofile);
     return {
-      partnerprofile:  partnerprofile
+      id:Number(this.$route.params.id),
+      partnerprofile: partnerdata[Number(this.$route.params.id)-1]
   }}
 };
 </script>
