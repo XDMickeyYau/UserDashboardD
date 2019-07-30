@@ -3,14 +3,14 @@
     <md-table v-model="searched"  :table-header-color="tableHeaderColor" md-sort="name" md-sort-order="asc" >
       <md-table-toolbar>
         <div class="md-toolbar-section-start" v-if="show_button">
-            <md-button id="tab-all" class="md-dense md-success" md-label="所有" @click="updatetable('all')" style="margin:10px" >所有</md-button> 
-            <md-button id="tab-existing" class="md-dense md-success" md-label="现有伙伴" @click="updatetable('existing')" style="margin:10px">现有伙伴</md-button> 
-            <md-button id="tab-warning" class="md-dense md-success" md-label="风险伙伴" @click="updatetable('warning')" style="margin:10px">风险伙伴</md-button> 
-            <md-button id="tab-recommendation" class="md-dense md-success" md-label="推荐伙伴" @click="updatetable('recommendation')" style="margin:10px">推荐伙伴</md-button> 
-            <md-button id="tab-invite" class="md-dense md-success" md-label="接受邀请" @click="updatetable('invite')" style="margin:10px">接受邀请</md-button> 
+            <md-button  class="md-dense md-success" @click="updatetable('all')" style="margin:10px" >所有</md-button> 
+            <md-button  class="md-dense md-success" @click="updatetable('existing')" style="margin:10px">现有伙伴</md-button> 
+            <md-button  class="md-dense md-warning" @click="updatetable('warning')" style="margin:10px">风险伙伴</md-button> 
+            <md-button  class="md-dense md-info" @click="updatetable('recommendation')" style="margin:10px">推荐伙伴</md-button> 
+            <md-button  class="md-dense md-primary" @click="updatetable('invite')" style="margin:10px">接受邀请</md-button> 
         </div>
-        <md-field md-clearable class="md-toolbar-section-end">
-          <md-input placeholder="名称搜索" v-model="search" @input="searchOnTable" />
+        <md-field md-clearable class="md-toolbar-section-end ">
+          <md-input placeholder="名称搜索" v-model="search" @input="searchOnTable" class="md-success" />
         </md-field>
 
       </md-table-toolbar>
