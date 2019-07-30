@@ -231,7 +231,7 @@
             <p class="category">有{{partnersinfo.number_recommended}}个伙伴推荐</p>
           </md-card-header>
           <md-card-content>
-            <recommendation-table table-header-color="blue"></recommendation-table>
+            <total-table :scope="'recommnedation'" table-header-color="blue"></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -244,7 +244,7 @@
             <p class="category">有{{partnersinfo.number_invited}}个伙伴推荐</p>
           </md-card-header>
           <md-card-content>
-            <invite-table table-header-color="purple"></invite-table>
+            <total-table :scope="'invite'" table-header-color="purple"></total-table>
           </md-card-content>
         </md-card>
       </div>

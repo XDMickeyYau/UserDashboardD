@@ -82,7 +82,12 @@ export default {
       }
     },
     created () {
-      this.searched = this.users
+      this.users=((this.scope=='existing')?totalpartnerdata.filter(partner => partner.existing==true):
+      (this.scope=='warning')?totalpartnerdata.filter(partner => partner.creditsts == "低" || partner.operationsts == "有潜在风险"):
+      (this.scope=='recommnedation')?totalpartnerdata.filter(partner => partner.recommended==true):
+      (this.scope=='invite')?totalpartnerdata.filter(partner => partner.invite==true):
+      totalpartnerdata);
+      this.searched = this.users;
     }
 };
 </script>
