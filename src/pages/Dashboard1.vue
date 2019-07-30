@@ -141,13 +141,14 @@
             <h3 class="title">{{ partnersinfo.number_risk }}
               <small>个</small></h3>
           </template>
-
+        <!--
           <template slot="footer">
             <div class="stats">
               <md-icon class="text-danger">warning</md-icon>
               <router-link to="/table1">需要处理</router-link >
             </div>
           </template>
+          -->
         </stats-card>
       </div>
 

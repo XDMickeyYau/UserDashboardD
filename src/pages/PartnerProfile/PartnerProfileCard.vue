@@ -3,7 +3,7 @@
       <md-card-header :data-background-color="(partnerprofile.invite)?'purple':(partnerprofile.recommended)?'blue':
       (partnerprofile.creditsts<650 || partnerprofile.operationsts <75)?'orange':'green'">
         <h4 class="title">{{partnerprofile.name}} 
-          <md-badge class="md-square" md-content="现有客户" v-if="partnerprofile.existing"/>   
+            
         </h4>
       </md-card-header>
 
@@ -23,11 +23,11 @@
           </div>
           <div class="md-layout-item md-small-size-100 md-size-50">
                 <h4>信用评级:</h4>
-                {{partnerprofile.creditsts}}
+                <h2>{{partnerprofile.creditsts}}</h2>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-50">
                 <h4>运营状况:</h4>
-                {{partnerprofile.operationsts}}
+                <h2>{{partnerprofile.operationsts}}</h2>
           </div>
           <!--
           <div class="md-layout-item md-small-size-100 md-size-100">

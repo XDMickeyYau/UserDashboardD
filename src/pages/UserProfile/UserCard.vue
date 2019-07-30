@@ -5,18 +5,18 @@
     </div>
 
     <md-card-content>
-      <h6 class="category text-gray">CEO / Co-Founder</h6>
-      <h4 class="card-title">Alec Thompson</h4>
+      <h6 class="category text-gray">{{partnerprofile.name}}</h6>
+      <h4 class="card-title">{{partnerprofile.reigion}}</h4>
       <p class="card-description">
-        Don't be scared of the truth because we need to restart the human
-        foundation in truth And I love you like Kanye loves Kanye I love Rick
-        Owens’ bed design but the back is...
+        {{partnerprofile.desciption}}
       </p>
-      <md-button class="md-round md-success">Follow</md-button>
+      <md-button class="md-round" v-bind:class="(partnerprofile.recommended)?'md-info':'md-success'" v-if="!partnerprofile.existing && !partnerprofile.invite">邀请</md-button>
+      <md-button class="md-round md-primary" v-if="!partnerprofile.existing && partnerprofile.invite">接受邀请</md-button>
     </md-card-content>
   </md-card>
 </template>
 <script>
+import partnertotaldata from "../../components/Data/totalpartnerdata";
 export default {
   name: "user-card",
   props: {
@@ -26,7 +26,10 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      id:Number(this.$route.params.id),
+      partnerprofile: partnertotaldata.find(x => x.id == this.$route.params.id)
+    };
   }
 };
 </script>
