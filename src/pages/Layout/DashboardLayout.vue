@@ -20,10 +20,10 @@
         <md-icon>person</md-icon>
         <p>伙伴推荐</p>
       </sidebar-link>-->
-      <sidebar-link to="/user">
+      <!--<sidebar-link to="/user">
         <md-icon>person</md-icon>
         <p>User Profile</p>
-      </sidebar-link>
+      </sidebar-link>-->
       <!--<sidebar-link to="/table">
         <md-icon>content_paste</md-icon>
         <p>Table list</p>
@@ -32,10 +32,10 @@
         <md-icon>content_paste</md-icon>
         <p>伙伴管理</p>
       </sidebar-link>
-      <sidebar-link to="/recommend-table-page">
+      <!--<sidebar-link to="/recommend-table-page">
         <md-icon>content_paste</md-icon>
         <p>伙伴推荐</p>
-      </sidebar-link>
+      </sidebar-link>-->
       <!--
       <sidebar-link to="/typography">
         <md-icon>library_books</md-icon>

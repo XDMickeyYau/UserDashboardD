@@ -12,13 +12,12 @@
         </div>
       </a>
 
-      <a
-        href="https://www2.deloitte.com/cn/zh.html"
-        target="_blank"
+      <router-link
+        to="/"
         class="simple-text logo-normal"
       >
         {{ title }}
-      </a>
+      </router-link>
     </div>
     <div class="sidebar-wrapper">
       <slot name="content"></slot>

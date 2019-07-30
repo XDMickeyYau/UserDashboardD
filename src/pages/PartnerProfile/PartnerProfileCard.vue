@@ -23,11 +23,11 @@
           </div>
           <div class="md-layout-item md-small-size-100 md-size-50">
                 <h4>信用评级:</h4>
-                <h2>{{partnerprofile.creditsts}}</h2>
+                <h2 v-bind:style="{ color:((partnerprofile.creditsts<550)?'red':(partnerprofile.creditsts<650)?'orange':'green')}">{{partnerprofile.creditsts}}</h2>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-50">
                 <h4>运营状况:</h4>
-                <h2>{{partnerprofile.operationsts}}</h2>
+                <h2 v-bind:style="{ color:((partnerprofile.operationsts<55)?'red':(partnerprofile.operationsts<75)?'orange':'green')}">{{partnerprofile.operationsts}}</h2>
           </div>
           <!--
           <div class="md-layout-item md-small-size-100 md-size-100">

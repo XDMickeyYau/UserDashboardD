@@ -21,17 +21,20 @@
       </md-table-empty-state>
 
       <md-table-row slot="md-table-row" slot-scope="{ item }" >
-        <md-table-cell md-sort-by="name" md-label="名称" >{{ item.name }}</md-table-cell>
+        
+        <md-table-cell md-sort-by="name" md-label="名称" ><router-link v-bind:to="'/partner-profile/'+item.id+'/partnerrecommendationdata'">{{ item.name }}</router-link></md-table-cell>
         <md-table-cell md-sort-by="reigion" md-label="地区" >{{ item.reigion }}</md-table-cell>
         <md-table-cell md-label="类型" md-sort-by="type">{{ item.type }}</md-table-cell>
         <md-table-cell md-label="信用等级" md-sort-by="creditsts" v-bind:style="{ color:((item.creditsts<550)?'red':(item.creditsts<650)?'orange':'green')}">{{item.creditsts}}
         </md-table-cell>
         <md-table-cell md-label="运营情况" md-sort-by="operationsts" v-bind:style="{ color:((item.operationsts<55)?'red':(item.operationsts<75)?'orange':'green')}">{{item.operationsts
         }}</md-table-cell>
-        <md-table-cell md-label="更多">
+        <!--<md-table-cell md-label="更多">
           <router-link v-bind:to="'/partner-profile/'+item.id+'/partnerdata'"><md-icon>store</md-icon></router-link >
-        </md-table-cell>
+        </md-table-cell>-->
+        
       </md-table-row>
+      
     </md-table>
   </div>
 </template>

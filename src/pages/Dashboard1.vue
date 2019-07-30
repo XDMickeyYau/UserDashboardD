@@ -2,7 +2,7 @@
   <div class="content">
     <div class="md-layout">
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <chart-card
           :chart-data="numberPartnerChart.data"
@@ -13,6 +13,31 @@
         >
           <template slot="content">
             <h4 class="title">伙伴数量</h4>
+            <!--<p class="category">
+              多少个伙伴
+            </p>-->
+          </template>
+
+          <template slot="footer">
+            <div class="stats">
+              <md-icon>access_time</md-icon>
+              12个月之内
+            </div>
+          </template>
+        </chart-card>
+      </div>
+            <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <chart-card
+          :chart-data="numberPartnerChartwarning.data"
+          :chart-options="numberPartnerChartwarning.options"
+          :chart-responsive-options="numberPartnerChartwarning.responsiveOptions"
+          :chart-type="'Bar'"
+          data-background-color="orange"
+        >
+          <template slot="content">
+            <h4 class="title">需要注意伙伴数量</h4>
             <!--<p class="category">
               多少个伙伴
             </p>-->
@@ -242,23 +267,10 @@
         <md-card>
           <md-card-header data-background-color="purple">
             <h4 class="title">伙伴邀请</h4>
-            <p class="category">有{{partnersinfo.number_invited}}个伙伴推荐</p>
+            <p class="category">有{{partnersinfo.number_invited}}个伙伴邀请</p>
           </md-card-header>
           <md-card-content>
             <total-table :scope="'invite'" table-header-color="purple"></total-table>
-          </md-card-content>
-        </md-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <md-card>
-          <md-card-header data-background-color="purple">
-            <h4 class="title">伙伴邀请</h4>
-            <p class="category">有{{partnersinfo.number_invited}}个伙伴推荐</p>
-          </md-card-header>
-          <md-card-content>
-            <total-table  table-header-color="purple"></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -396,7 +408,52 @@ export default {
             showGrid: false
           },
           low: 0,
-          high: 10,
+          high: 8,
+          chartPadding: {
+            top: 0,
+            right: 5,
+            bottom: 0,
+            left: 0
+          }
+        },
+        responsiveOptions: [
+          [
+            "screen and (max-width: 640px)",
+            {
+              seriesBarDistance: 5,
+              axisX: {
+                labelInterpolationFnc: function(value) {
+                  return value[0];
+                }
+              }
+            }
+          ]
+        ]
+      },
+            numberPartnerChartwarning: {
+        data: {
+          labels: [
+            "Aug\n18",
+            "Sep\n18",
+            "Oct\n18",
+            "Nov\n18",
+            "Dec\n18",
+            "Jan\n19",
+            "Feb\n19",
+            "Mar\n19",
+            "Apr\n19",
+            "May\n19",
+            "Jun\n19",
+            "Jul\n19"
+          ],
+          series: [[2, 1, 0, 1, 2, 2, 3, 2, 2, 1, 2, 2]]
+        },
+        options: {
+          axisX: {
+            showGrid: false
+          },
+          low: 0,
+          high: 8,
           chartPadding: {
             top: 0,
             right: 5,
