@@ -1,12 +1,15 @@
 var partnerdata = [
   {
+    id: 1,
     name: "公司1",
     reigion: "深圳",
     type: "金融科技",
     creditsts: "高",
-    operationsts: "正常"
+    operationsts: "正常",
+    
   },
   {
+    id: 2,
     name: "公司2",
     reigion: "广州",
     type: "网贷平台",
@@ -14,6 +17,7 @@ var partnerdata = [
     operationsts: "正常"
   },
   {
+    id: 3,
     name: "公司3",
     reigion: "深圳",
     type: "网贷平台",
@@ -21,6 +25,7 @@ var partnerdata = [
     operationsts: "正常"
   },
   {
+    id: 4,
     name: "公司4",
     reigion: "广州",
     type: "制作业",
@@ -28,6 +33,7 @@ var partnerdata = [
     operationsts: "有潜在风险"
   },
   {
+    id: 5,
     name: "公司5",
     reigion: "深圳",
     type: "银行",

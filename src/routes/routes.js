@@ -9,13 +9,15 @@ import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
+import RecommendationTableList from "@/pages/RecommendationTableList.vue"
+import PartnerProfile from "@/pages/PartnerProfile.vue"
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
 const routes = [
   {
     path: "/",
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: "/dashboard1",
     children: [
       {
         path: "dashboard",
@@ -24,7 +26,7 @@ const routes = [
       },
       {
         path: "dashboard1",
-        name: "Dashboard1",
+        name: "总览",
         component: Dashboard1
       },
       {
@@ -39,8 +41,13 @@ const routes = [
       },
       {
         path: "table1",
-        name: "Table List1",
+        name: "伙伴管理",
         component: TableList1
+      },
+      {
+        path: "recommend-table-page",
+        name: "伙伴推荐",
+        component: RecommendationTableList
       },
       {
         path: "typography",
@@ -64,6 +71,11 @@ const routes = [
         path: "notifications",
         name: "Notifications",
         component: Notifications
+      },
+      {
+        path: "partner-profile/:id",
+        name: "伙伴详细资料",
+        component: PartnerProfile
       }
     ]
   }

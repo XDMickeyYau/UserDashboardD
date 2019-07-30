@@ -4,25 +4,37 @@
 
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
-      <sidebar-link to="/dashboard">
+      <!--<sidebar-link to="/dashboard">
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>
-      </sidebar-link>
+      </sidebar-link>-->
       <sidebar-link to="/dashboard1">
         <md-icon>dashboard</md-icon>
         <p>总览</p>
       </sidebar-link>
+      <!--<sidebar-link to="/user">
+        <md-icon>person</md-icon>
+        <p>伙伴管理</p>
+      </sidebar-link>
+      <sidebar-link to="/user">
+        <md-icon>person</md-icon>
+        <p>伙伴推荐</p>
+      </sidebar-link>-->
       <sidebar-link to="/user">
         <md-icon>person</md-icon>
         <p>User Profile</p>
       </sidebar-link>
-      <sidebar-link to="/table">
+      <!--<sidebar-link to="/table">
         <md-icon>content_paste</md-icon>
         <p>Table list</p>
-      </sidebar-link>
+      </sidebar-link>-->
       <sidebar-link to="/table1">
         <md-icon>content_paste</md-icon>
-        <p>Table list1</p>
+        <p>伙伴管理</p>
+      </sidebar-link>
+      <sidebar-link to="/recommend-table-page">
+        <md-icon>content_paste</md-icon>
+        <p>伙伴推荐</p>
       </sidebar-link>
       <sidebar-link to="/typography">
         <md-icon>library_books</md-icon>
