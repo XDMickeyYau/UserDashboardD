@@ -14,14 +14,16 @@
             <div class="md-layout">
               <div class="md-layout-item md-medium-size-100">
                 <!--<h5>Notifications</h5>-->
-                <div v-for="notification in notificationdata" v-bind:key="notification.id">
+                
+                <div v-for="notification in notificationdata" v-if="!notification.read" v-bind:key="notification.id" >
+                  <transition name="fade">
                   <div
                   class="alert  alert-with-icon"
                   v-bind:class="{ 'alert-info': notification.class=='info',
                    'alert-warning': notification.class=='warning', 'alert-success': notification.class=='success'}"
-                  data-notify="container"
+                  data-notify="container" 
                   >
-                  <button type="button" aria-hidden="true" class="close">
+                  <button type="button" aria-hidden="true" class="close" @click="notification.read=true">
                     ×
                   </button>
                   <i data-notify="icon" class="material-icons">{{(notification.class=='info')?'add_alert':(notification.class=='warning')?'warning':'thumb_up'}}</i>
@@ -29,7 +31,9 @@
                     >{{notification.content}}</span
                   >
                   </div>
+                  </transition>
                 </div>
+                
 
                 <!--
                 <div

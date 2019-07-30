@@ -60,8 +60,8 @@
                       class="md-button md-just-icon md-simple"
                       data-toggle="dropdown"
                     >
-                      <md-icon>notifications</md-icon>
-                      <span class="notification">5</span>
+                      <md-icon>notifications</md-icon><!--
+                      <span class="notification"></span>5-->
                       <p class="hidden-lg hidden-md">Notifications</p>
                     </md-button>
                     <!--later
@@ -105,7 +105,8 @@ export default {
         id:'',
         class:'',
         content:''
-      }
+      },
+      notification_num:notifications.length,
     };
   },
   methods: {

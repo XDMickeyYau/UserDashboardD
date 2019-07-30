@@ -1,8 +1,7 @@
 <template>
     <md-card>
       <md-card-header :data-background-color="dataBackgroundColor">
-        <h4 class="title">用户名称</h4>
-        <p class="category">详细资料</p>
+        <h4 class="title">{{partnerprofile.name}}</h4>
       </md-card-header>
 
       <md-card-content>
