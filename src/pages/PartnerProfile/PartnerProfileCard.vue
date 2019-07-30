@@ -67,9 +67,7 @@
 </template>
 <script>
 
-import partnerdata from "../../components/Data/partnerdata.js";
-import partnerrecommendationdata from "../../components/Data/partnerrecommendationdata.js";
-import partnerinvitedata from "../../components/Data/partnerinvitedata";
+import partnertotaldata from "../../components/Data/totalpartnerdata";
 
 export default {
 
@@ -92,10 +90,7 @@ export default {
   data() {
     return {
       id:Number(this.$route.params.id),
-      partnerprofile: ((this.$route.params.source=='partnerdata')?partnerdata[Number(this.$route.params.id)-1]:
-      (this.$route.params.source=='partnerrecommendationdata')?partnerrecommendationdata[Number(this.$route.params.id)-1]:
-      (this.$route.params.source=='partnerinvitedata')?partnerinvitedata[Number(this.$route.params.id)-1]:
-      partnerdata[0])
+      partnerprofile: partnertotaldata.find(x => x.id == this.$route.params.id)
   }}
 };
 </script>

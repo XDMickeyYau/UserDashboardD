@@ -203,7 +203,7 @@
             <p class="category">你现在有{{partnersinfo.number}}个伙伴</p>
           </md-card-header>
           <md-card-content>
-            <simple-table1 table-header-color="green"></simple-table1>
+            <total-table :scope="'existing'" table-header-color="green"></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -217,7 +217,7 @@
             <p class="category">有{{partnersinfo.number_risk}}个伙伴需要注意</p>
           </md-card-header>
           <md-card-content>
-            <warning-table table-header-color="orange"></warning-table>
+            <total-table :scope="'warning'" table-header-color="orange"></total-table>
           </md-card-content>
         </md-card>
       </div>

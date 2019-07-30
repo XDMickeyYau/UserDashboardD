@@ -1,11 +1,18 @@
 <template>
   <div>
-    <md-table v-model="searched"  :table-header-color="tableHeaderColor" md-sort="name"
-    md-sort-order="asc" md-fixed-header>
+    <md-table v-model="searched"  :table-header-color="tableHeaderColor" md-sort="name" md-sort-order="asc" >
       <md-table-toolbar>
+        <div class="md-toolbar-section-start" v-if="show_button">
+            <md-button id="tab-all" class="md-dense md-success" md-label="所有" @click="updatetable('all')" style="margin:10px" >所有</md-button> 
+            <md-button id="tab-existing" class="md-dense md-success" md-label="现有伙伴" @click="updatetable('existing')" style="margin:10px">现有伙伴</md-button> 
+            <md-button id="tab-warning" class="md-dense md-success" md-label="风险伙伴" @click="updatetable('warning')" style="margin:10px">风险伙伴</md-button> 
+            <md-button id="tab-recommendation" class="md-dense md-success" md-label="推荐伙伴" @click="updatetable('recommendation')" style="margin:10px">推荐伙伴</md-button> 
+            <md-button id="tab-invite" class="md-dense md-success" md-label="接受邀请" @click="updatetable('invite')" style="margin:10px">接受邀请</md-button> 
+        </div>
         <md-field md-clearable class="md-toolbar-section-end">
           <md-input placeholder="名称搜索" v-model="search" @input="searchOnTable" />
         </md-field>
+
       </md-table-toolbar>
       
       <md-table-empty-state
@@ -15,11 +22,11 @@
 
       <md-table-row slot="md-table-row" slot-scope="{ item }" >
         <md-table-cell md-sort-by="name" md-label="名称" >{{ item.name }}</md-table-cell>
-        <md-table-cell md-label="地区" md-sort-by="reigion">{{ item.reigion }}</md-table-cell>
+        <md-table-cell md-sort-by="reigion" md-label="地区" >{{ item.reigion }}</md-table-cell>
         <md-table-cell md-label="类型" md-sort-by="type">{{ item.type }}</md-table-cell>
-        <md-table-cell md-label="信用等级" md-sort-by="creditsts" v-bind:style="{ color:((item.creditsts=='低')?'red':(item.creditsts=='中')?'orange':'green')}">{{ item.creditsts }}</md-table-cell>
-        <md-table-cell md-label="运营情况" md-sort-by="operationsts" v-bind:style="{ color:((item.operationsts=='有潜在风险')?'red':'green')}">{{
-          item.operationsts
+        <md-table-cell md-label="信用等级" md-sort-by="creditsts" v-bind:style="{ color:((item.creditsts<550)?'red':(item.creditsts<650)?'orange':'green')}">{{item.creditsts}}
+        </md-table-cell>
+        <md-table-cell md-label="运营情况" md-sort-by="operationsts" v-bind:style="{ color:((item.operationsts<55)?'red':(item.operationsts<75)?'orange':'green')}">{{item.operationsts
         }}</md-table-cell>
         <md-table-cell md-label="更多">
           <router-link v-bind:to="'/partner-profile/'+item.id+'/partnerdata'"><md-icon>store</md-icon></router-link >
@@ -49,7 +56,14 @@ export default {
       type: String,
       default: ""
     },
-    scope:String
+    scope:{
+      type: String,
+      default: ""
+    },
+    show_button:{
+      type: Boolean,
+      default: false
+    }
   },
 
   data() {
@@ -57,6 +71,7 @@ export default {
       search: null,
       searched: [],
       selected: [],
+      filter:'all',
       users: totalpartnerdata
       /*((scope=='existing')?totalpartnerdata.filter(partner => partner.existing==true):
       (scope=='warning')?partnerdata.filter(partner => partner.creditsts == "低" || partner.operationsts == "有潜在风险"):
@@ -79,11 +94,20 @@ export default {
       },
       searchOnTable () {
         this.searched = searchByName(this.users, this.search)
-      }
+      },
+    updatetable(scope){
+        if (scope=='all') {this.searched=this.users}
+        else if (scope=='existing'){this.searched=this.users.filter(partner => partner.existing==true)}
+        else if (scope=='warning') {this.searched=this.users.filter(partner => partner.creditsts<650 || partner.operationsts <75)}
+        else if (scope=='recommendation') {this.searched=this.users.filter(partner => partner.recommended==true)}
+        else if (scope=='invite') {this.searched=this.users.filter(partner => partner.invite==true)}
+    }
+
+
     },
     created () {
       this.users=((this.scope=='existing')?totalpartnerdata.filter(partner => partner.existing==true):
-      (this.scope=='warning')?totalpartnerdata.filter(partner => partner.creditsts == "低" || partner.operationsts == "有潜在风险"):
+      (this.scope=='warning')?totalpartnerdata.filter(partner => partner.creditsts<650 || partner.operationsts <75):
       (this.scope=='recommnedation')?totalpartnerdata.filter(partner => partner.recommended==true):
       (this.scope=='invite')?totalpartnerdata.filter(partner => partner.invite==true):
       totalpartnerdata);

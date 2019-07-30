@@ -1,7 +1,8 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      <div
+      
+      <!--<div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
@@ -10,23 +11,24 @@
             <p class="category">需要留意</p>
           </md-card-header>
           <md-card-content>
-            <warning-table table-header-color="orange"></warning-table>
+            <total-table :scope="'warning'" table-header-color="orange"></total-table>
           </md-card-content>
         </md-card>
-      </div>
-            <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      </div>-->
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
       >
         <md-card>
           <md-card-header data-background-color="green">
-            <h4 class="title">你的公司</h4>
-            <p class="category">它们做了怎么样</p>
+            <h4 class="title">公司总汇</h4>
+            <!--<p class="category">它们做了怎么样</p>-->
           </md-card-header>
           <md-card-content>
-            <simple-table1 table-header-color="green"></simple-table1>
+            <total-table :scope="''" :show_button="true" table-header-color="green"></total-table>
           </md-card-content>
         </md-card>
       </div>
+      
       <!--
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
@@ -47,13 +49,14 @@
 </template>
 
 <script>
-import { SimpleTable1, OrderedTable,WarningTable } from "@/components";
+import { SimpleTable1, OrderedTable,WarningTable,TotalTable } from "@/components";
 
 export default {
   components: {
     OrderedTable,
     SimpleTable1,
-    WarningTable
+    WarningTable,
+    TotalTable
   }
 };
 </script>
