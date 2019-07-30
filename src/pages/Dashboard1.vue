@@ -248,6 +248,19 @@
           </md-card-content>
         </md-card>
       </div>
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <md-card>
+          <md-card-header data-background-color="purple">
+            <h4 class="title">伙伴邀请</h4>
+            <p class="category">有{{partnersinfo.number_invited}}个伙伴推荐</p>
+          </md-card-header>
+          <md-card-content>
+            <total-table  table-header-color="purple"></total-table>
+          </md-card-content>
+        </md-card>
+      </div>
       <!--
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
@@ -287,10 +300,12 @@ import {
   WarningTable,
   RecommendationTable,
   InviteTable,
+  TotalTable,
   partnerdata,
   partnerrecommnedationdata,
   partnerwarningdata,
-  partnerinvitedata
+  partnerinvitedata,
+  totalpartnerdata
 } from "@/components";
 
 export default {
@@ -304,9 +319,11 @@ export default {
     WarningTable,
     RecommendationTable,
     InviteTable,
+    TotalTable,
   partnerdata,
   partnerrecommnedationdata,
-  partnerwarningdata
+  partnerwarningdata,
+  totalpartnerdata
   },
   data() {
     return {
