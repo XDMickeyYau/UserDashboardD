@@ -26,10 +26,14 @@
                   <button type="button" aria-hidden="true" class="close" @click="notification.read=true">
                     ×
                   </button>
+                  
                   <i data-notify="icon" class="material-icons">{{(notification.class=='info')?'add_alert':(notification.class=='warning')?'warning':'thumb_up'}}</i>
+                   
+                  <router-link v-bind:to="notification.path" tag="span">
                   <span data-notify="message"
                     >{{notification.content}}</span
-                  >
+                  ></router-link>
+                 
                   </div>
                   </transition>
                 </div>

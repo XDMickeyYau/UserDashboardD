@@ -73,7 +73,7 @@ const routes = [
         component: Notifications
       },
       {
-        path: "partner-profile/:id/:source",
+        path: "partner-profile/:id",
         name: "伙伴详细资料",
         component: PartnerProfile
       }

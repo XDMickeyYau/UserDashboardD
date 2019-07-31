@@ -1,17 +1,22 @@
 <template>
   <div>
     <md-table v-model="searched"  :table-header-color="tableHeaderColor" md-sort="name" md-sort-order="asc" md-fixed-header>
-      <md-table-toolbar>
-        <div class="md-toolbar-section-start" v-if="show_button">
-            <md-button  class="md-dense md-dufault" @click="updatetable('all')" style="margin:10px" >所有</md-button> 
-            <md-button  class="md-dense md-success" @click="updatetable('existing')" style="margin:10px">现有伙伴</md-button> 
-            <md-button  class="md-dense md-warning" @click="updatetable('warning')" style="margin:10px">潜在风险伙伴</md-button> 
-            <md-button  class="md-dense md-info" @click="updatetable('recommendation')" style="margin:10px">推荐伙伴</md-button> 
-            <md-button  class="md-dense md-primary" @click="updatetable('invite')" style="margin:10px">接受邀请</md-button> 
+      <md-table-toolbar class="">
+        <div class="md-toolbar-row">
+          <div class="md-toolbar-section-start  md-layout " v-if="show_button"  >
+            <md-button  class="md-dense md-dufault md-layout-item md-size-19" @click="updatetable('all')" style="margin:2px" >所有</md-button> 
+            <md-button  class="md-dense md-success md-layout-item md-size-19" @click="updatetable('existing')" style="margin:2px">现有伙伴</md-button> 
+            <md-button  class="md-dense md-warning md-layout-item md-size-19" @click="updatetable('warning')" style="margin:2px">潜在风险伙伴</md-button> 
+            <md-button  class="md-dense md-info md-layout-item md-size-19" @click="updatetable('recommendation')" style="margin:2px">推荐伙伴</md-button> 
+            <md-button  class="md-dense md-primary md-layout-item md-size-19" @click="updatetable('invite')"style="margin:2px" >接受邀请</md-button> 
+          </div>
         </div>
-        <md-field md-clearable class="md-toolbar-section-end ">
-          <md-input placeholder="名称搜索" v-model="search" @input="searchOnTable" class="md-success" />
-        </md-field>
+        <div class="md-toolbar-row">
+          <md-field md-clearable class="md-toolbar-section-start ">
+            <md-input placeholder="名称搜索" v-model="search" @input="searchOnTable" class="md-success" />
+          </md-field>
+        </div>
+
 
       </md-table-toolbar>
       
@@ -22,7 +27,7 @@
 
       <md-table-row slot="md-table-row" slot-scope="{ item }" class="md-layout" >
         
-        <md-table-cell class="md-layout-item md-size-30" md-sort-by="公司中文简称" md-label="公司中文简称" ><router-link v-bind:to="'/partner-profile/'+item.id+'/partnerrecommendationdata'">{{ item.公司中文简称 }}</router-link></md-table-cell>
+        <md-table-cell class="md-layout-item md-size-30" md-sort-by="公司中文简称" md-label="公司中文简称" ><router-link v-bind:to="'/partner-profile/'+item.id" tag="div">{{ item.公司中文简称 }}</router-link></md-table-cell>
         <md-table-cell class="md-layout-item md-size-30" md-label="行业名称" md-sort-by="行业名称" >{{ item.行业名称 }}</md-table-cell>
         <md-table-cell class="md-layout-item md-size-20" md-label="信用得分" md-sort-by="信用得分"  v-bind:style="{ color:((item.信用等级=='低')?'red':(item.信用等级=='中')?'orange':'green')}">{{item.信用得分}}</md-table-cell>
         <md-table-cell class="md-layout-item md-size-15" md-label="信用等级" md-sort-by="信用等级"  v-bind:style="{ color:((item.信用等级=='低')?'red':(item.信用等级=='中')?'orange':'green')}">{{item.信用等级}}</md-table-cell>

@@ -388,27 +388,27 @@ export default {
       numberPartnerChart: {
         data: {
           labels: [
-            "Aug\n18",
-            "Sep\n18",
-            "Oct\n18",
-            "Nov\n18",
-            "Dec\n18",
-            "Jan\n19",
-            "Feb\n19",
-            "Mar\n19",
-            "Apr\n19",
-            "May\n19",
-            "Jun\n19",
-            "Jul\n19"
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul"
           ],
-          series: [[3, 3, 4, 3, 4, 3, 4, 5, 5, 5, 5, 5]]
+          series: [[10, 11, 13, 12, 14, 14, 15, 16, 15, 18, 18, 19]]
         },
         options: {
           axisX: {
             showGrid: false
           },
           low: 0,
-          high: 8,
+          high: 24,
           chartPadding: {
             top: 0,
             right: 5,
@@ -433,27 +433,27 @@ export default {
             numberPartnerChartwarning: {
         data: {
           labels: [
-            "Aug\n18",
-            "Sep\n18",
-            "Oct\n18",
-            "Nov\n18",
-            "Dec\n18",
-            "Jan\n19",
-            "Feb\n19",
-            "Mar\n19",
-            "Apr\n19",
-            "May\n19",
-            "Jun\n19",
-            "Jul\n19"
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul"
           ],
-          series: [[2, 1, 0, 1, 2, 2, 3, 2, 2, 1, 2, 2]]
+          series: [[6, 6, 7, 5, 6, 7, 7, 8, 9, 8, 7, 8]]
         },
         options: {
           axisX: {
             showGrid: false
           },
           low: 0,
-          high: 8,
+          high: 12,
           chartPadding: {
             top: 0,
             right: 5,

@@ -1,7 +1,7 @@
 <template>
     <md-card>
       <md-card-header :data-background-color="(partnerprofile.invite)?'purple':(partnerprofile.recommended)?'blue':
-      (!partnerprofile.existing)?'grey':(filter_warning(partnerprofile))?'orange':'green'">
+      (!partnerprofile.existing)?'grey':(filter_warning(partnerprofile))?'orange':'green'" v-on:acceptinvite="acceptinvite">
         <h4 class="title">{{partnerprofile.公司中文全称}}</h4>
         <h4>{{partnerprofile.公司英文全称}}      </h4>
       </md-card-header>
@@ -50,8 +50,9 @@ export default {
   }},
   methods:{
     filter_warning:function  (partner){
-  return  partner.existing==true && (partner.信用等级=='低' || partner.信用等级=='中' );
-}
+  return  partner.existing==true && (partner.信用等级=='低' || partner.信用等级=='中' );},
+  acceptinvite:function(){partner.existing=true}
+
   }
 };
 </script>

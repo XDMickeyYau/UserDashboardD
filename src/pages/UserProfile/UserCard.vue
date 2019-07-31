@@ -15,6 +15,9 @@
       <h4 class="category" v-bind:style="{ color:((partnerprofile.信用等级=='低')?'red':(partnerprofile.信用等级=='中')?'orange':'green')}">信用等级{{partnerprofile.信用等级}}</h4>
       <md-button @click="notifyVue('invite')" class="md-round" v-bind:class="(partnerprofile.recommended)?'md-info':(partnerprofile.信用等级=='低'||partnerprofile.信用等级=='中')?'md-warning':'md-success'" v-if="!partnerprofile.existing && !partnerprofile.invite">邀请</md-button>
       <md-button @click="notifyVue('accept')" class="md-round md-primary" v-if="!partnerprofile.existing && partnerprofile.invite">接受邀请</md-button>
+      <md-button @click="notifyVue('accept')" class="md-round md-primary" v-if="!partnerprofile.existing && partnerprofile.invite">拒绝邀请</md-button>
+      <md-button  class="md-round md-default">
+        联络它</md-button>
     </md-card-content>
   </md-card>
 </template>
@@ -36,7 +39,7 @@ export default {
   },
     methods: {
     notifyVue(type) {
-      if (type=='accept')this.partnerprofile.existing=true;
+      if (type=='accept'){this.partnerprofile.existing=true;this.$emit('acceptinvite')};
       this.$notify({
         message:
           (type=='invite')?"已发出邀请":"已接受邀请",
