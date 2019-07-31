@@ -15,7 +15,7 @@
               <div class="md-layout-item md-medium-size-100">
                 <!--<h5>Notifications</h5>-->
                 
-                <div v-for="notification in notificationdata" v-if="!notification.read" v-bind:key="notification.id" >
+                <div v-for="notification in notificationdata_read"  v-bind:key="notification.id" >
                   <transition name="fade">
                   <div
                   class="alert  alert-with-icon"
@@ -183,7 +183,12 @@ export default {
         type: this.type[color]
       });
     }
+  },
+  computed: {
+  notificationdata_read: function () {
+    return this.notificationdata.filter(notification=>notification.read==false)
   }
+}
 };
 console.log(notificationlist)
 </script>

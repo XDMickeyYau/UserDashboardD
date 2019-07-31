@@ -1,77 +1,30 @@
 <template>
     <md-card>
       <md-card-header :data-background-color="(partnerprofile.invite)?'purple':(partnerprofile.recommended)?'blue':
-      (partnerprofile.creditsts<650 || partnerprofile.operationsts <75)?'orange':'green'">
-        <h4 class="title">{{partnerprofile.name}} 
-            
-        </h4>
+      (!partnerprofile.existing)?'grey':(filter_warning(partnerprofile))?'orange':'green'">
+        <h4 class="title">{{partnerprofile.公司中文全称}}</h4>
+        <h4>{{partnerprofile.公司英文全称}}      </h4>
       </md-card-header>
 
       <md-card-content>
-        <div class="md-layout">
-          <div class="md-layout-item md-small-size-100 md-size-33">
-                <h4>名称:</h4>
-                {{partnerprofile.name}}
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-33">
-                <h4>地区:</h4>
-                {{partnerprofile.reigion}}
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-33">
-                <h4>类型:</h4>
-                {{partnerprofile.type}}
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-50">
-                <h4>信用评级:</h4>
-                <h2 v-bind:style="{ color:((partnerprofile.creditsts<550)?'red':(partnerprofile.creditsts<650)?'orange':'green')}">{{partnerprofile.creditsts}}</h2>
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-50">
-                <h4>运营状况:</h4>
-                <h2 v-bind:style="{ color:((partnerprofile.operationsts<55)?'red':(partnerprofile.operationsts<75)?'orange':'green')}">{{partnerprofile.operationsts}}</h2>
-          </div>
-          <!--
-          <div class="md-layout-item md-small-size-100 md-size-100">
-            <md-field>
-              <label>Adress</label>
-              <md-input v-model="address" type="text"></md-input>
-            </md-field>
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-33">
-            <md-field>
-              <label>City</label>
-              <md-input v-model="city" type="text"></md-input>
-            </md-field>
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-33">
-            <md-field>
-              <label>Country</label>
-              <md-input v-model="country" type="text"></md-input>
-            </md-field>
-          </div>
-          <div class="md-layout-item md-small-size-100 md-size-33">
-            <md-field>
-              <label>Postal Code</label>
-              <md-input v-model="code" type="number"></md-input>
-            </md-field>
-          </div>
-          <div class="md-layout-item md-size-100">
-            <md-field maxlength="5">
-              <label>About Me</label>
-              <md-textarea v-model="aboutme"></md-textarea>
-            </md-field>
-          </div>
-          <div class="md-layout-item md-size-100 text-right">
-            <md-button class="md-raised md-success">Update Profile</md-button>
-          </div>
-          -->
-        </div>
+        <md-table :table-header-color="(partnerprofile.invite)?'purple':(partnerprofile.recommended)?'blue':
+      (filter_warning(partnerprofile))?'orange':'green'"  >
+          <md-table-row  v-for="(value, name) in partnerprofile" v-bind:key="name" class="md-layout">
+            <md-table-cell class="md-layout-item md-size-30" v-if="name!='existing' && name!='recommended' && name!='invite'&& name!='id'">{{name}}</md-table-cell>
+            <md-table-cell class="md-layout-item md-size-70" v-if="name!='existing' && name!='recommended' && name!='invite' && name!='id'">{{value}}</md-table-cell>
+          </md-table-row>
+          
+        </md-table>
       </md-card-content>
     </md-card>
+    
 </template>
 <script>
 
 import partnertotaldata from "../../components/Data/totalpartnerdata";
-
+function filter_warning(partner){
+  return  partner.existing==true && (partner.信用等级=='低' || partner.信用等级=='中' );
+}
 export default {
 
   name: "partner-profile-card",
@@ -94,7 +47,12 @@ export default {
     return {
       id:Number(this.$route.params.id),
       partnerprofile: partnertotaldata.find(x => x.id == this.$route.params.id)
-  }}
+  }},
+  methods:{
+    filter_warning:function  (partner){
+  return  partner.existing==true && (partner.信用等级=='低' || partner.信用等级=='中' );
+}
+  }
 };
 </script>
 <style></style>
