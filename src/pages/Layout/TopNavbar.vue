@@ -60,7 +60,8 @@
                       class="md-button md-just-icon md-simple"
                       data-toggle="dropdown"
                     >
-                      <md-icon>notifications</md-icon><!--
+                      <md-icon>notifications</md-icon
+                      ><!--
                       <span class="notification"></span>5-->
                       <p class="hidden-lg hidden-md">Notifications</p>
                     </md-button>
@@ -85,7 +86,7 @@
 </template>
 
 <script>
-import notifications from "../Notification/notification"
+import notifications from "../Notification/notification";
 export default {
   data() {
     return {
@@ -101,12 +102,12 @@ export default {
         "Kevin Malone"
       ],
       notificationdata: notifications,
-      notificationitem:{
-        id:'',
-        class:'',
-        content:''
+      notificationitem: {
+        id: "",
+        class: "",
+        content: ""
       },
-      notification_num:notifications.length,
+      notification_num: notifications.length
     };
   },
   methods: {

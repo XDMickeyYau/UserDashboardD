@@ -10,11 +10,13 @@
             <p class="category">或许能够帮到你</p>
           </md-card-header>
           <md-card-content>
-            <recommendation-table table-header-color="blue"></recommendation-table>
+            <recommendation-table
+              table-header-color="blue"
+            ></recommendation-table>
           </md-card-content>
         </md-card>
       </div>
-            <div
+      <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
@@ -47,7 +49,7 @@
 </template>
 
 <script>
-import { RecommendationTable ,InviteTable} from "@/components";
+import { RecommendationTable, InviteTable } from "@/components";
 
 export default {
   components: {

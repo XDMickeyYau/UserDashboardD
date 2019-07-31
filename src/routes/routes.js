@@ -9,8 +9,8 @@ import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
-import RecommendationTableList from "@/pages/RecommendationTableList.vue"
-import PartnerProfile from "@/pages/PartnerProfile.vue"
+import RecommendationTableList from "@/pages/RecommendationTableList.vue";
+import PartnerProfile from "@/pages/PartnerProfile.vue";
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
 const routes = [

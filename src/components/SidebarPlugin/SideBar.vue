@@ -12,10 +12,7 @@
         </div>
       </a>
 
-      <router-link
-        to="/"
-        class="simple-text logo-normal"
-      >
+      <router-link to="/" class="simple-text logo-normal">
         {{ title }}
       </router-link>
     </div>

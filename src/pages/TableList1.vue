@@ -1,7 +1,6 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      
       <!--<div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
@@ -24,11 +23,15 @@
             <!--<p class="category">它们做了怎么样</p>-->
           </md-card-header>
           <md-card-content>
-            <total-table :scope="''" :show_button="true" table-header-color="green"></total-table>
+            <total-table
+              :scope="''"
+              :show_button="true"
+              table-header-color="green"
+            ></total-table>
           </md-card-content>
         </md-card>
       </div>
-      
+
       <!--
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
@@ -49,7 +52,12 @@
 </template>
 
 <script>
-import { SimpleTable1, OrderedTable,WarningTable,TotalTable } from "@/components";
+import {
+  SimpleTable1,
+  OrderedTable,
+  WarningTable,
+  TotalTable
+} from "@/components";
 
 export default {
   components: {

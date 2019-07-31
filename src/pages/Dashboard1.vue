@@ -26,13 +26,15 @@
           </template>
         </chart-card>
       </div>
-            <div
+      <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <chart-card
           :chart-data="numberPartnerChartwarning.data"
           :chart-options="numberPartnerChartwarning.options"
-          :chart-responsive-options="numberPartnerChartwarning.responsiveOptions"
+          :chart-responsive-options="
+            numberPartnerChartwarning.responsiveOptions
+          "
           :chart-type="'Bar'"
           data-background-color="orange"
         >
@@ -163,10 +165,11 @@
 
           <template slot="content">
             <p class="category">有风险伙伴</p>
-            <h3 class="title">{{ partnersinfo.number_risk }}
-              <small>个</small></h3>
+            <h3 class="title">
+              {{ partnersinfo.number_risk }} <small>个</small>
+            </h3>
           </template>
-        <!--
+          <!--
           <template slot="footer">
             <div class="stats">
               <md-icon class="text-danger">warning</md-icon>
@@ -187,8 +190,9 @@
 
           <template slot="content">
             <p class="category">推荐伙伴</p>
-            <h3 class="title">{{ partnersinfo.number_recommended }}
-              <small>个</small></h3>
+            <h3 class="title">
+              {{ partnersinfo.number_recommended }} <small>个</small>
+            </h3>
           </template>
 
           <template slot="footer">
@@ -199,7 +203,9 @@
           </template>
         </stats-card>
       </div>
-      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+      <div
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
+      >
         <stats-card data-background-color="purple">
           <template slot="header">
             <i class="fas fa-star"></i>
@@ -207,8 +213,9 @@
 
           <template slot="content">
             <p class="category">伙伴邀请</p>
-            <h3 class="title">{{ partnersinfo.number_invited }}
-              <small>个</small></h3>
+            <h3 class="title">
+              {{ partnersinfo.number_invited }} <small>个</small>
+            </h3>
           </template>
 
           <template slot="footer">
@@ -226,10 +233,13 @@
         <md-card>
           <md-card-header data-background-color="green">
             <h4 class="title">伙伴状况</h4>
-            <p class="category">你现在有{{partnersinfo.number}}个伙伴</p>
+            <p class="category">你现在有{{ partnersinfo.number }}个伙伴</p>
           </md-card-header>
           <md-card-content>
-            <total-table :scope="'existing'" table-header-color="green"></total-table>
+            <total-table
+              :scope="'existing'"
+              table-header-color="green"
+            ></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -240,10 +250,15 @@
         <md-card>
           <md-card-header data-background-color="orange">
             <h4 class="title">需要注意的伙伴</h4>
-            <p class="category">有{{partnersinfo.number_risk}}个伙伴需要注意</p>
+            <p class="category">
+              有{{ partnersinfo.number_risk }}个伙伴需要注意
+            </p>
           </md-card-header>
           <md-card-content>
-            <total-table :scope="'warning'" table-header-color="orange"></total-table>
+            <total-table
+              :scope="'warning'"
+              table-header-color="orange"
+            ></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -254,10 +269,15 @@
         <md-card>
           <md-card-header data-background-color="blue">
             <h4 class="title">伙伴推荐</h4>
-            <p class="category">有{{partnersinfo.number_recommended}}个伙伴推荐</p>
+            <p class="category">
+              有{{ partnersinfo.number_recommended }}个伙伴推荐
+            </p>
           </md-card-header>
           <md-card-content>
-            <total-table :scope="'recommnedation'" table-header-color="blue"></total-table>
+            <total-table
+              :scope="'recommnedation'"
+              table-header-color="blue"
+            ></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -267,10 +287,15 @@
         <md-card>
           <md-card-header data-background-color="purple">
             <h4 class="title">伙伴邀请</h4>
-            <p class="category">有{{partnersinfo.number_invited}}个伙伴邀请</p>
+            <p class="category">
+              有{{ partnersinfo.number_invited }}个伙伴邀请
+            </p>
           </md-card-header>
           <md-card-content>
-            <total-table :scope="'invite'" table-header-color="purple"></total-table>
+            <total-table
+              :scope="'invite'"
+              table-header-color="purple"
+            ></total-table>
           </md-card-content>
         </md-card>
       </div>
@@ -333,10 +358,10 @@ export default {
     RecommendationTable,
     InviteTable,
     TotalTable,
-  partnerdata,
-  partnerrecommnedationdata,
-  partnerwarningdata,
-  totalpartnerdata
+    partnerdata,
+    partnerrecommnedationdata,
+    partnerwarningdata,
+    totalpartnerdata
   },
   data() {
     return {
@@ -430,7 +455,7 @@ export default {
           ]
         ]
       },
-            numberPartnerChartwarning: {
+      numberPartnerChartwarning: {
         data: {
           labels: [
             "Aug",

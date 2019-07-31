@@ -1,8 +1,8 @@
 <template>
-  <div class="content" >
+  <div class="content">
     <div class="md-layout">
       <div class="md-layout-item">
-        <md-card>   
+        <md-card>
           <md-card-header data-background-color="green">
             <h4 class="title">通知</h4>
             <!--<p class="category">
@@ -14,30 +14,46 @@
             <div class="md-layout">
               <div class="md-layout-item md-medium-size-100">
                 <!--<h5>Notifications</h5>-->
-                
-                <div v-for="notification in notificationdata_read"  v-bind:key="notification.id" >
+
+                <div
+                  v-for="notification in notificationdata_read"
+                  v-bind:key="notification.id"
+                >
                   <transition name="fade">
-                  <div
-                  class="alert  alert-with-icon"
-                  v-bind:class="{ 'alert-info': notification.class=='info',
-                   'alert-warning': notification.class=='warning', 'alert-success': notification.class=='success'}"
-                  data-notify="container" 
-                  >
-                  <button type="button" aria-hidden="true" class="close" @click="notification.read=true">
-                    ×
-                  </button>
-                  
-                  <i data-notify="icon" class="material-icons">{{(notification.class=='info')?'add_alert':(notification.class=='warning')?'warning':'thumb_up'}}</i>
-                   
-                  <router-link v-bind:to="notification.path" tag="span">
-                  <span data-notify="message"
-                    >{{notification.content}}</span
-                  ></router-link>
-                 
-                  </div>
+                    <div
+                      class="alert  alert-with-icon"
+                      v-bind:class="{
+                        'alert-info': notification.class == 'info',
+                        'alert-warning': notification.class == 'warning',
+                        'alert-success': notification.class == 'success'
+                      }"
+                      data-notify="container"
+                    >
+                      <button
+                        type="button"
+                        aria-hidden="true"
+                        class="close"
+                        @click="notification.read = true"
+                      >
+                        ×
+                      </button>
+
+                      <i data-notify="icon" class="material-icons">{{
+                        notification.class == "info"
+                          ? "add_alert"
+                          : notification.class == "warning"
+                          ? "warning"
+                          : "thumb_up"
+                      }}</i>
+
+                      <router-link v-bind:to="notification.path" tag="span">
+                        <span data-notify="message">{{
+                          notification.content
+                        }}</span></router-link
+                      >
+                    </div>
                   </transition>
                 </div>
-                
 
                 <!--
                 <div
@@ -168,10 +184,10 @@ export default {
         topCenter: false
       },
       notificationdata: notificationlist,
-      notification:{
-        id:'',
-        class:'',
-        content:''
+      notification: {
+        id: "",
+        class: "",
+        content: ""
       }
     };
   },
@@ -189,10 +205,12 @@ export default {
     }
   },
   computed: {
-  notificationdata_read: function () {
-    return this.notificationdata.filter(notification=>notification.read==false)
+    notificationdata_read: function() {
+      return this.notificationdata.filter(
+        notification => notification.read == false
+      );
+    }
   }
-}
 };
-console.log(notificationlist)
+console.log(notificationlist);
 </script>

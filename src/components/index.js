@@ -18,7 +18,7 @@ import partnerdata from "./Data/partnerdata.js";
 import partnerrecommnedationdata from "./Data/partnerrecommendationdata.js";
 import partnerwarningdata from "./Data/partnerwarningdata.js";
 import partnerinvitedata from "./Data/partnerinvitedata.js";
-import totalpartnerdata from "./Data/totalpartnerdata.js"
+import totalpartnerdata from "./Data/totalpartnerdata.js";
 
 export {
   ChartCard,
