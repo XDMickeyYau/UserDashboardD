@@ -8,7 +8,7 @@
             <md-button  class="md-dense md-success md-layout-item md-size-19" @click="updatetable('existing')" style="margin:2px">现有伙伴</md-button> 
             <md-button  class="md-dense md-warning md-layout-item md-size-19" @click="updatetable('warning')" style="margin:2px">潜在风险伙伴</md-button> 
             <md-button  class="md-dense md-info md-layout-item md-size-19" @click="updatetable('recommendation')" style="margin:2px">推荐伙伴</md-button> 
-            <md-button  class="md-dense md-primary md-layout-item md-size-19" @click="updatetable('invite')"style="margin:2px" >接受邀请</md-button> 
+            <md-button  class="md-dense md-primary md-layout-item md-size-19" @click="updatetable('invite')" style="margin:2px" >接受邀请</md-button> 
           </div>
         </div>
         <div class="md-toolbar-row">
